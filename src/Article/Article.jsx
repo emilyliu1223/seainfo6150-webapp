@@ -5,7 +5,7 @@ const Article = () => {
     <div style={{width:"820px", textAlign:"left",margin:"auto"}}> 
       <h1>The Statue of Liberty's torch heads to new museum  </h1>
       <br/>
-      <cite>by Kate Farley</cite> (<a href="mailto:kate.farley@nytimes.com">kate.farley@nytimes.com</a>)   <br/>
+      <cite>by Kate Farley ( <a href="mailto:kate.farley@nytimes.com">kate.farley@nytimes.com</a> )  </cite>  <br/>
       November 22, 2018   <br/>
      
      <p> The Statue of Liberty's original torch is getting a new home.</p> 
@@ -18,7 +18,7 @@ const Article = () => {
 
       <h1>The history of the Statue of Liberty</h1>
 
-      <p>Not only is the Statue of Liberty the symbol of New York City, she is also a UNESCO World Heritage site under the designation of _Outstanding Universal Value_.</p>
+      <p>Not only is the Statue of Liberty the symbol of New York City, she is also a UNESCO World Heritage site under the designation of <cite>Outstanding Universal Value</cite>.</p>
 
       <p>Her full name is Liberty Enlightening the World, and she was designed by Frederic Auguste Bartholdi and built by Gustave Eiffel -- yes, the same guy who built Paris's Eiffel Tower.</p>
 
@@ -37,7 +37,7 @@ const Article = () => {
 
       <h1>Some facts about the Statue of Liberty</h1>
      <ul>
-      <li>Total overall height from the base of the pedestal foundation to the tip of the torch is 305 feet, 6 inches</li>
+      <li>Total overall height from the base of the pedestal foundation to the tip of the torch is <b>305 feet, 6 inches</b></li>
 
       <li>Height of the Statue from her heel to the top of her head is 111 feet, 6 inches</li>
 
