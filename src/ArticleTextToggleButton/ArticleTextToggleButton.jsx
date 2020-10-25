@@ -2,7 +2,7 @@ import React from 'react'
 
 const ArticleTextToggleButton = (props) => {
    
-  return <button id={props.slug} onClick={props.onClick} value={props.value}>{props.buttonText}</button>;
+  return <input id={props.id} type="button"onClick={props.onClick} value={props.buttonText}></input>;
   };
   
 

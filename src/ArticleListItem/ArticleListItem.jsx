@@ -1,4 +1,4 @@
-import { set } from 'lodash';
+
 import React,{useState} from 'react'
 import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton"
 
@@ -9,21 +9,28 @@ const ArticleListItem=(props)=> {
     const [text,setText]=useState('');
     const[id,setId]=useState('');
     const myList = props.article;
-    const toggle=(e)=>{
-            setId(e.target.value);
-            if(bt=="Show more"){
-                setBt("Show less");
-            }else{
-                setBt("Show more");
-            }
+    function toggle(e){
+        e.preventDefault();
+           var btn=document.getElementById(e.target.id);
+           
+           if(btn.value=="Show more"){
+               btn.value="Show less";
+               setId(btn.id);
+               console.log(document.getElementById("display"));
+           }else if(btn.value="Show less"){
+            btn.value="Show more";
+            setId('');
+           }
+          
     }
     // }
     // const myList = props.article;
     const mappedList = myList.map((listItem) => (
         <li key={listItem.slug}>
             <h1>{listItem.title}</h1>
-            <ArticleTextToggleButton onClick={toggle} buttonText={bt} value={listItem.slug}/>
-            {listItem.slug==id&&bt=="Show less"? <div>
+           
+            <ArticleTextToggleButton id={listItem.slug} onClick={toggle}  buttonText="Show more"/>
+            {listItem.slug==id && document.getElementById(listItem.slug).value=="Show less"?<div>
             <time dateTime={listItem.timeStamp}>{listItem.displayDate}</time> 
             <p>{listItem.shortText}</p>
             </div>
