@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from "react";
-import { Switch, Route } from "react-router-dom";
-import Article from "./Article/Article";
-import DynamicArticle from "./DynamicArticle/DynamicArticle";
+import React from 'react'
+import ArticleListItem from "../ArticleListItem/ArticleListItem"
+import { useEffect, useState } from "react";
 import { isEmpty } from "lodash";
-
-function App() {
-  const [fetchedData, setFetchedData] = useState([]);
+import { Switch, Route } from "react-router-dom";
+function ArticleList() {
+ const [fetchedData, setFetchedData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,24 +14,25 @@ function App() {
       );
       const responseJson = await response.json();
       setFetchedData(responseJson);
+      
     };
-   
     if(isEmpty(fetchedData)){
-      fetchData();
-    }
-
+        fetchData();
+      }
   }, [fetchedData]);
- 
+  
 
   return isEmpty(fetchedData) ? null : (
     <div className="App">
+       
       <Switch>
         <Route>
-          <DynamicArticle article={Object.values(fetchedData)[1]} />
+          <ArticleListItem article={Object.values(fetchedData)} />
+          {/*  */}
         </Route>
       </Switch>
     </div>
   );
 }
 
-export default App;
+export default ArticleList
