@@ -1,0 +1,25 @@
+article{
+    margin: auto;
+    width: 70%;
+    border: pink 0.2rem solid;
+    background-color: gray;
+}
+h1{
+    color: rgb(207, 23, 23);
+    margin-left: 1.3rem;
+    font-weight: 800;
+}
+ .section{
+    background-image: linear-gradient(to right,rgb(255, 0, 0,0.3) 3%, white 15%, white 30%);
+   margin: 0.5rem;
+   border-radius: 0.5rem;
+   margin: 1.0rem;
+  border: red 0.1rem solid;
+
+}
+/* .btn{
+    color: red;
+} */
+.display{
+    margin-left: 0.8rem;
+}

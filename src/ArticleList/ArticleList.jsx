@@ -3,6 +3,7 @@ import ArticleListItem from "../ArticleListItem/ArticleListItem"
 import { useEffect, useState } from "react";
 import { isEmpty } from "lodash";
 import { Switch, Route } from "react-router-dom";
+import styles from "./ArticleList.module.css";
 function ArticleList() {
  const [fetchedData, setFetchedData] = useState([]);
 
@@ -23,7 +24,7 @@ function ArticleList() {
   
 
   return isEmpty(fetchedData) ? null : (
-    <div className="App">
+    <div className={styles.App}>
        
       <Switch>
         <Route>
