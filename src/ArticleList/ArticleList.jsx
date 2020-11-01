@@ -1,39 +1,30 @@
 import React from 'react'
 import ArticleListItem from "../ArticleListItem/ArticleListItem"
-import { useEffect, useState } from "react";
-import { isEmpty } from "lodash";
-import { Switch, Route } from "react-router-dom";
 import styles from "./ArticleList.module.css";
-function ArticleList() {
- const [fetchedData, setFetchedData] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      // performs a GET request
-      const response = await fetch(
-        "http://demo1390455.mockable.io/articles"
-      );
-      const responseJson = await response.json();
-      setFetchedData(responseJson);
+const ArticleList = (props) => {
+  let displayContent;
+  console.log(props.articles)
+  if (props.articles) {
+    displayContent = (
+      <div className={styles.container}>
+        
+        {props.articles.map((article) => (
+          <ArticleListItem article={article} key={article.slug} />
+        ))}
+      </div>
       
-    };
-    if(isEmpty(fetchedData)){
-        fetchData();
-      }
-  }, [fetchedData]);
-  
+    );
+  } else {
+    displayContent = <div>Try again</div>;
+  }
 
-  return isEmpty(fetchedData) ? null : (
-    <div className={styles.App}>
-       
-      <Switch>
-        <Route>
-          <ArticleListItem article={Object.values(fetchedData)} />
-          {/*  */}
-        </Route>
-      </Switch>
+  return (
+    <div>
+      {displayContent}
     </div>
   );
-}
+};
+
 
 export default ArticleList

@@ -11,17 +11,14 @@ ReactDOM.render(
     {/* A <Switch> looks through its children <Route>s and
         renders the first one that matches the current URL. */}
     <Switch>
-      <Route path="/" exact>
+      <Route path="/">
         <App />
       </Route>
       <Route path="/demo">
         <Demo />
       </Route>
-      <Route path="/articlelist">
+      {/* <Route exact path="/articlelist">
         <ArticleList />
-      </Route>
-      {/* <Route>
-        <App />
       </Route> */}
     </Switch>
   </Router>,

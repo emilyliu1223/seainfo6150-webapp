@@ -3,59 +3,37 @@ import React,{useState} from 'react'
 import ArticleTextToggleButton from "../ArticleTextToggleButton/ArticleTextToggleButton"
 import styles from"./ArticleListItem.module.css"
 const ArticleListItem=(props)=> {
-    const [open,setOpen]=useState(false);
-    const [bt,setBt]=useState("Show more");
-    const [date,setDate]=useState('');
-    const [text,setText]=useState('');
-    const[id,setId]=useState('');
-    const myList = props.article;
-    // function toggle(e){
-    //     e.preventDefault();
-    //        var btn=document.getElementById(e.target.id);
-    //        if(btn.value=="Show more"){
-    //            btn.value="Show less";
-    //            setId(btn.id);
-            
-    //        }else if(btn.value="Show less"){
-    //         btn.value="Show more";
-    //         setId("");
-    //        }
-    //        }
-          
     
-    // }
-    // const myList = props.article;
-    const mappedList = myList.map((listItem) => (
-        <div className={styles.section} key={listItem.slug}>
-            <h1>{listItem.title}</h1>
-           
-            <ArticleTextToggleButton id={listItem.slug} buttonText="Show more"onClick={(e)=>{
-                 var btn=document.getElementById(e.target.id);
-                 if(btn.value=="Show more"){
-                    btn.value="Show less";
-                    setId(btn.id);
-                }
-                else if(btn.value="Show less"){
-                    btn.value="Show more";
-                    setId("");
-                   }
-                
-                
-            }}  />
-            {id==listItem.slug&& document.getElementById(listItem.slug).value=="Show less"?<div className={styles.display}>
-             <time dateTime={listItem.timeStamp}>{listItem.displayDate}</time> 
-            <p>{listItem.shortText}</p> 
-             </div>:<div></div>
-           }
-            </div>
-      ));
+  
+    const [isTextShowing, setIsTextShowing] = useState(false);
+  
+    function onClick() {
+      setIsTextShowing(!isTextShowing);
+    }
+  
     return (
-        <article>
-      <div>
-         {mappedList}
+      <div className={styles.container}>
+      <article className={styles.article}>
+        <div className={styles.wrapper}>
+          <h2 className={styles.title}>{props.article.title}</h2>
+          {isTextShowing && (
+            <div className={styles.text}>
+              <p>{props.article.shortText}</p>
+              <time className={styles.time} dateTime={props.article.timeStamp}>
+                {props.article.displayDate}
+              </time>
+            </div>
+          )}
         </div>
-    </article>
-         
+        <div className={styles.button}> 
+        <ArticleTextToggleButton
+          buttonText={isTextShowing ? "Show less" : "Show more"}
+          onClick={onClick}
+        />
+        </div>
+      </article>
+    </div>
+
     )
 }
 
