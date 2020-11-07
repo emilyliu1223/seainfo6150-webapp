@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleListItem tests renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <article
+      class="article"
+    >
+      <div
+        class="wrapper"
+      >
+        <h2
+          class="title"
+        />
+      </div>
+      <div
+        class="button"
+      >
+        <button
+          class="button"
+        >
+          Show more
+        </button>
+      </div>
+    </article>
+  </div>
+</div>
+`;
