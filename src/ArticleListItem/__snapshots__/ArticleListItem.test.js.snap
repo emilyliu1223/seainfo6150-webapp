@@ -11,9 +11,20 @@ exports[`ArticleListItem tests renders correctly 1`] = `
       <div
         class="wrapper"
       >
+        <div
+          class="image_container"
+        >
+          <img
+            alt="hey"
+            class="image"
+            src="aaa"
+          />
+        </div>
         <h2
           class="title"
-        />
+        >
+          hey
+        </h2>
       </div>
       <div
         class="button"

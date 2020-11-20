@@ -4,7 +4,7 @@ import styles from "./ArticleList.module.css";
 
 const ArticleList = (props) => {
   let displayContent;
-  console.log(props.articles)
+  
   if (props.articles) {
     displayContent = (
       <div className={styles.container}>

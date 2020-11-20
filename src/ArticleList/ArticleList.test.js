@@ -11,7 +11,7 @@ import { isEmpty } from "lodash";
     
     
       const fetchData = async () => {
-          
+        
         // performs a GET request
         const response = await fetch(
           "http://demo1390455.mockable.io/articles"
@@ -20,8 +20,9 @@ import { isEmpty } from "lodash";
         
       };
       console.log(fetchData);
+
+
      
-      
    
   
 

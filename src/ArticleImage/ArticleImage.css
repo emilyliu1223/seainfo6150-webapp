@@ -1,0 +1,11 @@
+.image_container{
+    width: fit-content;
+    margin-bottom: 8%;
+}
+.image{
+    width: 50%;
+    box-shadow: 5px 10px 8px #888888;
+    height: 100%;
+    border-radius: 50%;
+    border: 1rem solid #c00;
+}
